@@ -23,7 +23,7 @@ import software.amazon.kinesis.coordinator.Scheduler;
  *  Flow goes as:
  *  1) producerN writes to stream {shard1, ..., shardN};
  *  2) consumerN reads from {applicationName, streamName}:
- *    If multiple consumers read from the same applicationName - in fact just  1 consumer will be retrieving data.
+ *    If multiple consumers read from the same applicationName - in fact they will work as a one replica set (each reading from particular shard)
  *    Therefore to read the same data in parallel  - each consumer should read from separate applicationName
  */
 @Configuration
